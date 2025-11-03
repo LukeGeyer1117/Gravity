@@ -13,10 +13,15 @@ const cube = new THREE.Mesh( geometry, material );
 scene.add(cube);
 
 camera.position.z = 5;
+const rotation_constants = {
+    "x": 0.05,
+    "y": 0.06,
+    "z": 0
+}
 
 function animate() {
-    cube.rotation.x += 0.1;
-    cube.rotation.y += 0.1;
+    cube.rotation.x += rotation_constants["x"];
+    cube.rotation.y += rotation_constants["y"];
     renderer.render( scene, camera );
 }
 renderer.setAnimationLoop( animate );
